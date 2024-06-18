@@ -48,3 +48,15 @@ container.addEventListener('mouseout', (e) => {
 });
 
 generateGrid(16);
+
+let regenerateButton = document.querySelector(".regenerate");
+regenerateButton.addEventListener('click', () => {
+  let newSize = parseInt(prompt("Please enter desired a x a size:"));
+  if (newSize > 100 || newSize <= 0 || isNaN(newSize)) {
+    alert("Please enter a valid size.");
+  } else {
+    let currentSquares = container.querySelectorAll('.square');
+    currentSquares.forEach((el) => el.remove());
+    generateGrid(newSize);
+  }
+})
