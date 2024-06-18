@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
 }
 
 .container {
@@ -20,7 +21,16 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  box-shadow: 0 0 50px 15px rgba(255, 255, 255, 0.5);
 }
 
 .container .square {
+  border-radius: 1px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.container .square.hovered {
+  opacity: 1;
+  transition: none;
 }
